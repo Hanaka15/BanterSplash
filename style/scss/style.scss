@@ -1,0 +1,89 @@
+$color-input-width: 150px;
+$color-picker-gap: 10px;
+$remove-color-size: 20px;
+$remove-color-position-offset: -10px;
+$min-height-output: 50px;
+$border-radius: .25rem;
+$font-size-remove-color: 14px;
+$animation-duration: 50s;
+
+.color-picker-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $color-picker-gap;
+    margin-bottom: $color-picker-gap;
+}
+
+.colorContainer {
+    position: relative;
+    width: $color-input-width;
+    margin: 1rem 0 0 0;
+}
+
+.colorInput {
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+    border-radius: $border-radius;
+}
+
+*:focus {
+    outline: none;
+}
+
+::-webkit-color-swatch-wrapper,
+::-webkit-color-swatch,
+::-moz-color-swatch {
+    padding: 0;
+    border: none;
+    border-radius: $border-radius;
+}
+
+.removeColor {
+    position: absolute;
+    top: $remove-color-position-offset;
+    right: $remove-color-position-offset;
+    cursor: pointer;
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 50%;
+    width: $remove-color-size;
+    height: $remove-color-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-remove-color;
+    padding: 0;
+}
+
+.output-container,
+.preview-container {
+    margin-top: 20px;
+}
+
+.output-container {
+    padding-bottom: 8rem;
+}
+
+@keyframes bounce-background {
+    from { background-position: top; }
+    50% { background-position: bottom; }
+    to { background-position: top; }
+}
+
+.preview-area {
+    padding: 8px;
+    min-height: $min-height-output;
+    font-size: 2rem;
+    background: url(/banter.jpg) center bottom / cover no-repeat;
+    text-align: center;
+    overflow: auto;
+    animation: bounce-background $animation-duration ease-in-out infinite;
+}
+
+#markdownOutput {
+    height: auto;
+    min-height: $min-height-output;
+    overflow: none;
+}
