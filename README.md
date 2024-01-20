@@ -1,6 +1,6 @@
 # BanterSplash
 
-Welcome to BanterSplash, where text meets vibrant colors to create engaging and lively banter! BanterSplash is a web-based tool designed to add a splash of color to your words, turning ordinary text into a playful and visually appealing experience.
+Welcome to BanterSplash, where text meets vibrant colors to create engaging and lively banter! BanterSplash is a web-based tool designed to add a splash of color to your Banter Bio. - ChatGpt
 
 ## Features
 
@@ -12,7 +12,7 @@ Welcome to BanterSplash, where text meets vibrant colors to create engaging and 
 
 ## How to Use
 
-To use BanterSplash, simply visit the [BanterSplash Page](https://yourusername.github.io/BanterSplash). The tool is intuitive and easy to use, with no installation required.
+To use BanterSplash, simply visit the [BanterSplash Page](https://hanaka15.github.io/BanterSplash). The tool is intuitive and easy to use, with no installation required.
 
 ## Note to Users
 
@@ -24,6 +24,4 @@ BanterSplash is made available under the MIT License. For more details, see the 
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter)
-
-Project Link: [https://github.com/yourusername/BanterSplash](https://github.com/yourusername/BanterSplash)
+Project Link: [https://github.com/Hanaka15/BanterSplash](https://github.com/yourusername/BanterSplash)
