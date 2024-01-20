@@ -1,6 +1,6 @@
 # BanterSplash
 
-Welcome to BanterSplash, where text meets vibrant colors to create engaging and lively banter! BanterSplash is a web-based tool designed to add a splash of color to your Banter Bio. - ChatGpt
+Welcome to BanterSplash, where text meets vibrant colors to create engaging and lively banter! BanterSplash is a web-based tool designed to add a splash of color to your Banter Bio. - ChatGPT
 
 ## Features
 
