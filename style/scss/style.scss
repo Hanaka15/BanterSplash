@@ -5,13 +5,18 @@ $remove-color-position-offset: -10px;
 $min-height-output: 50px;
 $border-radius: .25rem;
 $font-size-remove-color: 14px;
-$animation-duration: 50s;
+$animation-duration: 30s;
 
 .color-picker-container {
+    margin: 1rem 0;
     display: flex;
     flex-wrap: wrap;
     gap: $color-picker-gap;
     margin-bottom: $color-picker-gap;
+}
+
+.dark-mode {
+    width: fit-content;
 }
 
 .colorContainer {
@@ -23,8 +28,8 @@ $animation-duration: 50s;
 .colorInput {
     width: 100%;
     padding: 0;
+    width: $color-input-width;
     cursor: pointer;
-    border-radius: $border-radius;
 }
 
 *:focus {
@@ -76,7 +81,7 @@ $animation-duration: 50s;
     padding: 8px;
     min-height: $min-height-output;
     font-size: 2rem;
-    background: url(/banter.jpg) center bottom / cover no-repeat;
+    background: url(/images/banter.jpg) center bottom / cover no-repeat;
     text-align: center;
     overflow: auto;
     animation: bounce-background $animation-duration ease-in-out infinite;

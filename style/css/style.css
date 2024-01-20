@@ -1,8 +1,13 @@
 .color-picker-container {
+  margin: 1rem 0;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 10px;
+}
+
+.dark-mode {
+  width: fit-content;
 }
 
 .colorContainer {
@@ -14,8 +19,8 @@
 .colorInput {
   width: 100%;
   padding: 0;
+  width: 150px;
   cursor: pointer;
-  border-radius: 0.25rem;
 }
 
 *:focus {
@@ -72,10 +77,10 @@
   padding: 8px;
   min-height: 50px;
   font-size: 2rem;
-  background: url(/banter.jpg) center bottom/cover no-repeat;
+  background: url(/images/banter.jpg) center bottom/cover no-repeat;
   text-align: center;
   overflow: auto;
-  animation: bounce-background 50s ease-in-out infinite;
+  animation: bounce-background 30s ease-in-out infinite;
 }
 
 #markdownOutput {
