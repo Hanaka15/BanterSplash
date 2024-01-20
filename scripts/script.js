@@ -74,7 +74,7 @@ $(document).ready(function() {
         }
 
         if (colors.length > 0 && textOutput) {
-            textOutput += `</color>`;
+            textOutput = `(ノಠ益ಠ)ノ${textOutput}</color>`;
         }
 
         return { html: htmlOutput, text: textOutput };
