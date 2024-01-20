@@ -77,7 +77,7 @@
   padding: 8px;
   min-height: 50px;
   font-size: 2rem;
-  background: url(/images/banter.jpg) center bottom/cover no-repeat;
+  background: url(./images/banter.jpg) center bottom/cover no-repeat;
   text-align: center;
   overflow: auto;
   animation: bounce-background 30s ease-in-out infinite;

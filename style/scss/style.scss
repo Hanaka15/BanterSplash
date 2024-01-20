@@ -81,7 +81,7 @@ $animation-duration: 30s;
     padding: 8px;
     min-height: $min-height-output;
     font-size: 2rem;
-    background: url(/images/banter.jpg) center bottom / cover no-repeat;
+    background: url(./images/banter.jpg) center bottom / cover no-repeat;
     text-align: center;
     overflow: auto;
     animation: bounce-background $animation-duration ease-in-out infinite;
