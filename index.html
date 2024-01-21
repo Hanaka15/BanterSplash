@@ -1,98 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gradient to Markdown Converter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
-        integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./style/css/style.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/ffv1sgh.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/css/style.min.css" />
     <style>
-        /* Add your custom styles here if needed */
+      /* Add your custom styles here if needed */
     </style>
-</head>
+  </head>
 
-<body class="position-absolute top-0 start-0 w-100 d-flex flex-column min-vh-100">
-
+  <body
+    class="position-absolute top-0 start-0 w-100 d-flex flex-column min-vh-100"
+  >
     <div class="flex-grow-1">
-        <div class="container dark-mode position-absolute top-0 start-0 p-3">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="darkModeToggle">
-                <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+      <div class="container dark-mode position-absolute top-0 start-0 p-3">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+          <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+        </div>
+      </div>
+
+      <div class="container content-wrapper mt-4">
+        <h1 class="mt-4 text-center">🎨 Banter Splash 🌈</h1>
+        <hr />
+        <section>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="textInput"
+                  placeholder="Enter text"
+                  aria-describedby="textInputHelp"
+                />
+                <small id="textInputHelp"
+                  >Input text for gradient generation.</small
+                >
+              </div>
             </div>
-        </div>
-    
-        <div class="container content-wrapper mt-4">
-            <h1 class="mt-4 text-center">🎨 Banter Splash 🌈</h1>
-            <hr>
-            <section>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group mt-4">
-                            <input type="text" class="form-control" id="textInput" placeholder="Enter text"
-                                aria-describedby="textInputHelp">
-                            <small id="textInputHelp">Input text for gradient generation.</small>
-                        </div>
-                    </div>
-                </div>
-            </section>
-    
-            <section class="mt-2">
-                <div class="row">
-                    <div class="col-12">
-                        <div id="colorInputs" class="color-picker-container">
-                            <!-- Color pickers will be added here dynamically -->
-                        </div>
-                        <button type="button" class="btn btn-secondary mt-2" id="addColor">Add Color</button>
-                    </div>
-                </div>
-            </section>
-            <section class="mt-4">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="preview-container">
-                            <h5>Preview</h5>
-                            <div id="output" class="preview-area border border-1 rounded" aria-live="polite"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-    
-            <section class="mt-4">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="output-container py-0">
-                            <h5>Markdown Output</h5>
-                            <div id="textAreaOutput" class="form-control text-break" aria-label="Markdown Output"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+          </div>
+        </section>
+
+        <section class="mt-2">
+          <div class="row">
+            <div class="col-12">
+              <div id="colorInputs" class="color-picker-container">
+                <!-- Color pickers will be added here dynamically -->
+              </div>
+              <button
+                type="button"
+                class="btn btn-secondary mt-2"
+                id="addColor"
+              >
+                Add Color
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="mt-4">
+          <div class="row">
+            <div class="col-12">
+              <div class="preview-container">
+                <h5>Preview</h5>
+                <div
+                  id="output"
+                  class="preview-area border border-1 rounded"
+                  aria-live="polite"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-4">
+          <div class="row">
+            <div class="col-12">
+              <div class="output-container py-0">
+                <h5>Markdown Output</h5>
+                <div
+                  id="textAreaOutput"
+                  class="form-control text-break"
+                  aria-label="Markdown Output"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <footer class="footer mt-auto">
-        <hr>
-        <div class="container py-3">
-            <div class="row">
-                <div class="col text-center">
-                    <!-- Text -->
-                    <p>Made with <i class="fas fa-heart text-danger"></i> by John</p>
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <!-- Social Icons -->
-                    <a href="https://discord.gg/bantaverse" target="_blank" class="social-icon text-white me-3">
-                        <i class="fab fa-discord fa-2x"></i>
-                    </a>
-                    <a href="https://github.com/hanaka15" target="_blank" class="social-icon text-white">
-                        <i class="fab fa-github fa-2x"></i>
-                    </a>
-                </div>
-            </div>
+      <hr />
+      <div class="container py-3">
+        <div class="row">
+          <div class="col text-center">
+            <!-- Text -->
+            <p>Made with <i class="fas fa-heart text-danger"></i> by John</p>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <!-- Social Icons -->
+            <a
+              href="https://discord.gg/bantaverse"
+              target="_blank"
+              class="social-icon text-white me-3"
+            >
+              <i class="fab fa-discord fa-2x"></i>
+            </a>
+            <a
+              href="https://github.com/hanaka15"
+              target="_blank"
+              class="social-icon text-white"
+            >
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+          </div>
         </div>
+      </div>
     </footer>
 
     <!-- JavaScript libraries and scripts -->
@@ -100,6 +137,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="./scripts/script.min.js"></script>
-</body>
-
+  </body>
 </html>
