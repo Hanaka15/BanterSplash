@@ -1,9 +1,9 @@
 // Define all variables
-const $textInput = $('#textInput'); // Input field for text
-const $colorInputsContainer = $('#colorInputs'); // Container for color inputs
-const $output = $('#output'); // Output container for colored text
-const $textAreaOutput = $('#textAreaOutput'); // Text area for output
-const copyButton = document.getElementById('copyButton'); // Copy button
+const textInput = $('#textInput'); // Input field for text
+const colorInputsContainer = $('#colorInputs'); // Container for color inputs
+const output = $('#output'); // Output container for colored text
+const textAreaOutput = $('#textAreaOutput'); // Text area for output
+const copyButton = $('#copyButton'); // Copy button
 
 /**
  * Creates a color input element.
@@ -38,28 +38,28 @@ function createRemoveButton() {
  * @param {string} colorValue - Initial color value.
  */
 function addColorInputToContainer(colorValue) {
-  const $colorInput = createColorInput(colorValue);
-  const $removeButton = createRemoveButton();
-  const $colorInputContainer = $('<div>')
+  const colorInput = createColorInput(colorValue);
+  const removeButton = createRemoveButton();
+  const colorInputContainer = $('<div>')
     .addClass('colorInputContainer position-relative d-inline-block me-2 mb-2')
-    .append($colorInput)
-    .append($removeButton);
-  $colorInputsContainer.append($colorInputContainer);
-  $colorInputContainer.trigger('colorCreated');
+    .append(colorInput)
+    .append(removeButton);
+  colorInputsContainer.append(colorInputContainer);
+  colorInputContainer.trigger('colorCreated');
 }
 
 /**
  * Updates the output and resizes it.
  */
 function updateOutputAndResize() {
-  const text = $textInput.val();
+  const text = textInput.val();
   const colors = getColors();
   const colorOutput = colors.length > 0 ? applyColorsToText(text, colors) : {
     html: text,
     text: text
   };
-  $output.html(colorOutput.html);
-  $textAreaOutput.text(colorOutput.text);
+  output.html(colorOutput.html);
+  textAreaOutput.text(colorOutput.text);
   autoResizeDiv();
 }
 
@@ -67,14 +67,14 @@ function updateOutputAndResize() {
  * Copies the text output to clipboard and updates the copy button text.
  */
 function copyToClipboard() {
-    $textAreaOutput.select();
-    document.execCommand('copy');
-    const originalText = $('#copyButton').html();
-    $('#copyButton').html('Copied!');
+    const textToCopy = textAreaOutput.text();
+    navigator.clipboard.writeText(textToCopy)
+    const originalText = copyButton.text();
+    copyButton.text('Copied!');
     setTimeout(() => {
-      $('#copyButton').html(originalText);
+        copyButton.text(originalText);
     }, 2000);
-  }
+}
 
 /**
  * Gets colors from color inputs.
@@ -127,25 +127,24 @@ function applyColorsToText(text, colors) {
  * Auto resizes the output div.
  */
 function autoResizeDiv() {
-  const $outputDiv = $('#textAreaOutput');
-  $outputDiv.css('height', 'auto');
-  const newHeight = $outputDiv[0].scrollHeight;
-  $outputDiv.css('height', newHeight + 'px');
+textAreaOutput.css('height', 'auto');
+  const newHeight = textAreaOutput[0].scrollHeight;
+  textAreaOutput.css('height', newHeight + 'px');
 }
 
 /**
  * Initializes dark mode toggle.
  */
 function initializeDarkModeToggle() {
-  const $darkModeToggle = $('#darkModeToggle');
+  const darkModeToggle = $('#darkModeToggle');
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
     .matches;
   if (prefersDarkScheme) {
     toggleDarkMode(true);
-    $darkModeToggle.prop('checked', true);
+    darkModeToggle.prop('checked', true);
   }
-  $darkModeToggle.on('change', () => {
-    toggleDarkMode($darkModeToggle.is(':checked'));
+  darkModeToggle.on('change', () => {
+    toggleDarkMode(darkModeToggle.is(':checked'));
   });
 }
 
@@ -159,23 +158,21 @@ function toggleDarkMode(isDark) {
 }
 
 // Add event listeners
-$colorInputsContainer.on('input', '.colorInput', function() {
+colorInputsContainer.on('input', '.colorInput', function() {
   updateOutputAndResize();
   $(this)
     .trigger('colorValueChanged');
 });
-$colorInputsContainer.on('colorCreated', '.colorInputContainer', function() {
+colorInputsContainer.on('colorCreated', '.colorInputContainer', function() {
   updateOutputAndResize();
 });
-$textInput.on('input', function() {
+textInput.on('input', function() {
   updateOutputAndResize();
   $(this)
     .trigger('textChanged');
 });
-$('#addColor')
-  .on('click', () => addColorInputToContainer('#ffffff'));
-$('#copyButton')
-  .on('click', () => copyToClipboard());
+$('#addColor').on('click', () => addColorInputToContainer('#ffffff'));
+copyButton.on('click', () => copyToClipboard());
 
 // Initialize dark mode toggle
 initializeDarkModeToggle();
