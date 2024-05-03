@@ -72,9 +72,17 @@ $animation-duration: 30s;
 }
 
 @keyframes bounce-background {
-    from { background-position: top; }
-    50% { background-position: bottom; }
-    to { background-position: top; }
+    from {
+        background-position: top;
+    }
+
+    50% {
+        background-position: bottom;
+    }
+
+    to {
+        background-position: top;
+    }
 }
 
 .preview-area {
@@ -85,11 +93,37 @@ $animation-duration: 30s;
     text-align: center;
     overflow: auto;
     animation: bounce-background $animation-duration ease-in-out infinite;
-    font-family: liberation-sans, sans-serif !important; 
+    font-family: liberation-sans, sans-serif !important;
 }
 
 #markdownOutput {
     height: auto;
     min-height: $min-height-output;
     overflow: none;
+}
+
+.footer {
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        * {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    }
+}
+
+.buttons {
+    margin: .5rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+    align-items: center;
+    &__button {
+        width: 100%;
+    }
 }

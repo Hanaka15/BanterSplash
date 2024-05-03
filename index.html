@@ -3,28 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gradient to Markdown Converter</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
-      integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <title>Banter Splash</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.typekit.net/ffv1sgh.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./style/css/style.min.css" />
-    <style>
-      /* Add your custom styles here if needed */
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.1.0/chroma.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" defer></script>
+    <script src="./scripts/buymecoffe.js" defer></script>
+    <script src="./scripts/script.min.js" defer></script>
   </head>
-
-  <body
-    class="position-absolute top-0 start-0 w-100 d-flex flex-column min-vh-100"
-  >
+  <body class="position-absolute top-0 start-0 w-100 d-flex flex-column min-vh-100">
     <div class="flex-grow-1">
       <div class="container dark-mode position-absolute top-0 start-0 p-3">
         <div class="form-check form-switch">
@@ -32,7 +22,6 @@
           <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
         </div>
       </div>
-
       <div class="container content-wrapper mt-4">
         <h1 class="mt-4 text-center">🎨 Banter Splash 🌈</h1>
         <hr />
@@ -40,102 +29,67 @@
           <div class="row">
             <div class="col-12">
               <div class="form-group mt-4">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="textInput"
-                  placeholder="Enter text"
-                  aria-describedby="textInputHelp"
-                />
-                <small id="textInputHelp"
-                  >Input text for gradient generation.</small
-                >
+                <input type="text" class="form-control" id="textInput" placeholder="Enter text" aria-describedby="textInputHelp" />
+                <small id="textInputHelp">Input text for gradient generation.</small>
               </div>
             </div>
           </div>
         </section>
-
-        <section class="mt-2">
+        <section>
           <div class="row">
             <div class="col-12">
               <div id="colorInputs" class="color-picker-container">
-                <!-- Color pickers will be added here dynamically -->
               </div>
-              <button
-                type="button"
-                class="btn btn-secondary mt-2"
-                id="addColor"
-              >
-                Add Color
-              </button>
+              <button type="button" class="btn btn-secondary" id="addColor"> Add Color </button>
             </div>
           </div>
         </section>
-        <section class="mt-4">
+        <section>
           <div class="row">
             <div class="col-12">
               <div class="preview-container">
-                <h5>Preview</h5>
-                <div
-                  id="output"
-                  class="preview-area border border-1 rounded"
-                  aria-live="polite"
-                ></div>
+                <div id="output" class="preview-area border border-1 rounded" aria-live="polite"></div>
               </div>
             </div>
           </div>
         </section>
-
-        <section class="mt-4">
+        <section>
           <div class="row">
             <div class="col-12">
-              <div class="output-container py-0">
-                <h5>Markdown Output</h5>
-                <div
-                  id="textAreaOutput"
-                  class="form-control text-break"
-                  aria-label="Markdown Output"
-                ></div>
+              <div class="output-container py-0 position-relative">
+                <div id="textAreaOutput" class="form-control text-break" aria-label="Markdown Output"></div>
+                <div class="buttons">
+                  <a id="copyButton" class="btn btn-secondary buttons__button" title="Copy to Clipboard">
+                    Copy To Clipboard <i class="fas fa-copy"></i>
+                  </a>
+                  <a class="btn btn-primary buttons__button" href="https://sidequestvr.com/account/profile" target="_blank"> 
+                    Go to Profile <i class="fas fa-sign-in-alt"></i> 
+                </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </div>
     </div>
-
-    <footer class="footer mt-auto">
+    <footer class="footer">
       <hr />
-      <div class="container py-3">
+      <div class="container mb-3" >
         <div class="row">
-          <div class="col text-center">
-            <!-- Text -->
-            <p>Made with <i class="fas fa-heart text-danger"></i> by John</p>
+          <div class="col text-center footer__content">
+            <p class="flex justify-content-center align-items-center">Made with <i class="fas fa-heart text-danger m-1"></i> by John </p>
           </div>
-          <div class="col d-flex justify-content-center">
-            <!-- Social Icons -->
-            <a
-              href="https://discord.gg/bantaverse"
-              target="_blank"
-              class="social-icon text-white me-3"
-            >
+          <div class="col footer__content" class="social__icons">
+            <a class="me-3 text-reset" href="https://discord.gg/bantaverse" target="_blank">
               <i class="fab fa-discord fa-2x"></i>
             </a>
-            <a
-              href="https://github.com/hanaka15"
-              target="_blank"
-              class="social-icon text-white"
-            >
+            <a class="social__icons me-3 text-reset" href="https://github.com/hanaka15" target="_blank">
               <i class="fab fa-github fa-2x"></i>
             </a>
+            <buy-me-a-coffee username="hanaka"></buy-me-a-coffee>
           </div>
         </div>
       </div>
     </footer>
-
-    <!-- JavaScript libraries and scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.1.0/chroma.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="./scripts/script.min.js"></script>
   </body>
 </html>

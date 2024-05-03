@@ -81,10 +81,35 @@
   text-align: center;
   overflow: auto;
   animation: bounce-background 30s ease-in-out infinite;
+  font-family: liberation-sans, sans-serif !important;
 }
 
 #markdownOutput {
   height: auto;
   min-height: 50px;
   overflow: none;
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__content * {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.buttons {
+  margin: 0.5rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+.buttons__button {
+  width: 100%;
 }
